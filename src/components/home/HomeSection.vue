@@ -25,7 +25,7 @@ const props = defineProps({
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 101vh;
     padding: 0 24px;
 
     @media (min-width: 1024px)  {

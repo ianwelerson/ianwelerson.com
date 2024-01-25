@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed, type ComputedRef } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useI18n } from "vue-i18n";
+import { useElementVisibility } from '@vueuse/core'
 
 import HomeSection from '@/components/home/HomeSection.vue'
 
@@ -12,6 +13,14 @@ import GithubIcon from '@/components/icons/GithubIcon.vue'
 const { t } = useI18n();
 
 const yearsOfExperience = ref()
+// Section refs
+const entrySection = ref(null)
+const aboutSection = ref(null)
+const contactSection = ref(null)
+// Section status
+const entryViewed = useElementVisibility(entrySection)
+const aboutViewed = useElementVisibility(aboutSection)
+const contactViewed = useElementVisibility(contactSection)
 
 yearsOfExperience.value = new Date().getFullYear() - 2018
 
@@ -36,47 +45,59 @@ useHead({
     }
   ]
 })
+
+const entryViewedStatus: ComputedRef<boolean> = computed(() => {
+  return entryViewed.value || entryViewedStatus.value
+})
+const aboutViewedStatus: ComputedRef<boolean> = computed(() => {
+  return aboutViewed.value || aboutViewedStatus.value
+})
+const contactViewedStatus: ComputedRef<boolean> = computed(() => {
+  return contactViewed.value || contactViewedStatus.value
+})
 </script>
 
 <template>
   <main class="home">
     <div class="home__wrapper">
-      <home-section id="entry" next="about">
-        <div class="entry">
-          <p class="entry__greetings">{{ $t('home.entry.greetings') }}</p>
-          <h1 class="entry__introduction">{{ $t('home.entry.introduction.start') }} <span class="entry__highlight">{{
-            $t('basic.shortName') }}</span><br>{{ $t('home.entry.introduction.middle') }} <span
+      <home-section id="entry" next="about" ref="entrySection">
+        <div :class="['entry', { 'entry--visible': entryViewedStatus }]">
+          <p class="entry__greetings tracking-in-expand">{{ $t('home.entry.greetings') }}</p>
+          <h1 class="entry__introduction fade-in">{{ $t('home.entry.introduction.start') }} <span
+              class="entry__highlight">{{
+                $t('basic.shortName') }}</span><br>{{ $t('home.entry.introduction.middle') }} <span
               class="entry__highlight">{{ $t('basic.title') }}</span></h1>
-          <div class="entry__cta">
+          <div class="entry__cta scale-in-ver-center">
             <router-link to="#about" class="btn btn--lg btn--color-white btn--floating">{{ $t('home.entry.cta')
             }}</router-link>
           </div>
         </div>
       </home-section>
-      <home-section id="about" next="contact">
-        <div class="about">
-          <div class="about__picture">
+      <home-section id="about" next="contact" ref="aboutSection">
+        <div :class="['about', { 'about--visible': aboutViewedStatus }]">
+          <div class="about__picture fade-in">
             <img src="@/assets/images/profile-pic.jpg" :alt="`${$t('basic.fullName')} - Picture`" class="about__profile">
           </div>
-          <div class="about__description">
+          <div class="about__description fade-in">
             <p class="about__description-line">{{ $t('home.about.description.start', { years: yearsOfExperience }) }}</p>
             <p class="about__description-line">{{ $t('home.about.description.middle') }}</p>
             <p class="about__description-line">{{ $t('home.about.description.end') }}</p>
           </div>
-          <div class="about__cta">
+          <div class="about__cta fade-in">
             <a :href="$t('social.linkedin')" target="_blank" class="btn btn--color-white">{{ $t('home.about.cta') }}</a>
           </div>
           <div class="about__stack">
-            <div v-for="stack in $tm('home.about.stack')" :key="stack" class="stack-item">{{ stack }}</div>
+            <div v-for="stack in $tm('home.about.stack')" :key="stack" class="stack-item scale-in-ver-center">{{ stack }}
+            </div>
           </div>
         </div>
       </home-section>
-      <home-section id="contact">
-        <div class="contact">
-          <a :href="`mailto:${$t('social.email')}`" class="contact__email">{{ $t('social.email') }}</a>
+      <home-section id="contact" ref="contactSection">
+        <div :class="['contact', { 'contact--visible': contactViewedStatus }]">
+          <a :href="`mailto:${$t('social.email')}`" class="contact__email fade-in">{{ $t('social.email') }}</a>
           <div class="contact__social">
-            <a :href="$t('social.linkedin')" class="btn btn--social btn--social-white"><linkedin-icon /></a>
-            <a :href="$t('social.github')" class="btn btn--social btn--social-white"><github-icon /></a>
+            <a :href="$t('social.linkedin')" class="btn btn--social btn--social-white scale-in-hor-center"><linkedin-icon /></a>
+            <a :href="$t('social.github')" class="btn btn--social btn--social-white scale-in-hor-center"><github-icon /></a>
           </div>
         </div>
       </home-section>
@@ -119,6 +140,11 @@ useHead({
 
 .entry {
   text-align: center;
+  display: none;
+  
+  &--visible {
+    display: block;
+  }
 
   &__greetings {
     margin: 0;
@@ -137,6 +163,7 @@ useHead({
     margin-top: 12px;
     font-weight: $font-light;
     font-size: $text-4xl;
+    animation-delay: 0.7s;
 
     @media (min-width: 1024px) {
       font-size: $text-5xl;
@@ -149,16 +176,17 @@ useHead({
 
   &__cta {
     margin-top: 40px;
+    animation-delay: 1.2s;
   }
 }
 
 .about {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
 
-  &__picture {
-    //
+  &--visible {
+    display: flex;
   }
 
   &__profile {
@@ -166,7 +194,7 @@ useHead({
     height: 180px;
     object-fit: cover;
     border-radius: 100%;
-
+    animation-delay: 0.3s;
 
     @media (min-width: 1024px) {
       width: 200px;
@@ -177,6 +205,7 @@ useHead({
   &__description {
     margin-top: 20px;
     text-align: center;
+    animation-delay: 0.6s;
 
     @media (min-width: 1024) {
       width: 90%;
@@ -188,6 +217,7 @@ useHead({
     line-height: 1.5;
     letter-spacing: 0.05rem;
     font-size: $text-base;
+    animation-delay: 0.9s;
 
     @media (min-width: 1024px) {
       font-size: $text-lg;
@@ -202,6 +232,7 @@ useHead({
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    animation-delay: 1.2s;
   }
 
   &__stack {
@@ -223,30 +254,47 @@ useHead({
       align-items: center;
       border-radius: 50px;
       margin: 6px 12px;
+      animation-delay: 1.5s;
     }
   }
 }
 
 .contact {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
+
+  &--visible {
+    display: flex;
+  }
 
   &__email {
     text-decoration: none;
     color: $white;
     font-weight: $font-bold;
     font-size: $text-3xl;
-    
+    transition: 2s all ease-in;
+    animation-delay: 0.3s;
+
     @media (min-width: 1024px) {
       font-size: $text-5xl;
     }
-  } 
+
+    &:hover {
+      color: $gray-500;
+      text-decoration: underline;
+      transition: 2s all ease-out;
+    }
+  }
 
   &__social {
     display: flex;
     justify-content: center;
     margin-top: 50px;
+
+    .btn {
+      animation-delay: 0.6s;
+    }
   }
 }
 </style>

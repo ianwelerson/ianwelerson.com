@@ -69,7 +69,7 @@ onClickOutside(languageModal, () => toggleLanguageModal())
         border: none;
         outline: none;
         padding: 0;
-        color: $white;
+        color: $gray-500;
         width: 30px;
         cursor: pointer;
         
@@ -97,7 +97,7 @@ onClickOutside(languageModal, () => toggleLanguageModal())
             cursor: pointer;
             
             &__icon {
-                color: $blue-700;
+                color: $white;
                 width: 16px;
             }
         }
