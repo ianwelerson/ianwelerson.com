@@ -8,11 +8,11 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue')
     },
-    {
-      path: '/resume',
-      name: 'resume',
-      component: () => import('@/views/ResumeView.vue')
-    }
+    // {
+    //   path: '/resume',
+    //   name: 'resume',
+    //   component: () => import('@/views/ResumeView.vue')
+    // }
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
