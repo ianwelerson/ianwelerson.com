@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, type ComputedRef } from 'vue'
 import { useHead } from '@unhead/vue'
-import { useI18n } from "vue-i18n";
+import { useI18n } from "vue-i18n"
 import { useElementVisibility } from '@vueuse/core'
 
 import HomeSection from '@/components/home/HomeSection.vue'
@@ -26,24 +26,6 @@ yearsOfExperience.value = new Date().getFullYear() - 2018
 
 useHead({
   title: t('meta.title', { name: t('basic.fullName'), page: 'About' }),
-  meta: [
-    {
-      name: 'description',
-      content: t('meta.description', { years: yearsOfExperience.value })
-    },
-    {
-      name: 'keywords',
-      content: 'HTML,CSS,JavaScript,TypeScript,Vue,Vue.js,PHP,Laravel,Tailwind,Bootstrap,Wordpress,Plugin,SEO,Dev,Developer,Development,Frontend,Front-end,Engineer'
-    },
-    {
-      name: 'author',
-      content: t('basic.fullName')
-    },
-    {
-      name: 'theme-color',
-      content: '#091C2F'
-    }
-  ]
 })
 
 const entryViewedStatus: ComputedRef<boolean> = computed(() => {
@@ -84,7 +66,7 @@ const contactViewedStatus: ComputedRef<boolean> = computed(() => {
             <p class="about__description-line">{{ $t('home.about.description.end') }}</p>
           </div>
           <div class="about__cta fade-in">
-            <a :href="$t('social.linkedin')" target="_blank" class="btn btn--color-white">{{ $t('home.about.cta') }}</a>
+            <router-link :to="{ name: 'challengesList' }" class="btn btn--color-white">{{ $t('home.about.cta') }}</router-link>
           </div>
           <div class="about__stack">
             <div v-for="stack in $tm('home.about.stack')" :key="stack" class="stack-item scale-in-ver-center">{{ stack }}
