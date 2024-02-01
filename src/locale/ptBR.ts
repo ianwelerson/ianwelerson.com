@@ -31,7 +31,7 @@ export default {
                 middle: 'Iniciei minha carreira como desenvolvedor full stack, lidando com plataformas como WordPress e Laravel. Posteriormente, foquei em tecnologias frontend, dominando HTML, CSS, JavaScript, Vue.js, TypeScript e Tailwind.',
                 end: 'Colaborei com empresas brasileiras e norte-americanas, cultivando adaptabilidade em diversos ambientes de trabalho.'
             },
-            cta: 'Veja meu LinkedIn',
+            cta: 'Veja meus desafios frontend',
             stack: [
                 'JavaScript',
                 'TypeScript',
@@ -40,6 +40,29 @@ export default {
                 'Tailwind',
                 'Jest',
                 'Cypress',
+            ]
+        }
+    },
+    challenges: {
+        list: {
+            title: 'Frontend Challenges',
+            entry: {
+                text: 'Confira a minha página de desafios de frontend. Tudo aqui é foi feito com Vue.js. Você pode acessar os arquivos no meu ',
+                link: 'https://github.com/ianwelerson/ianwelerson.com/tree/main/src/views',
+                linkText: 'GitHub',
+            },
+            noContent: 'Nenhum desafio disponível no momento...',
+            items: [
+                // {
+                //     id: 'my-id',
+                //     title: 'Social links profile',
+                //     thumb: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/sfsa14rwjz0wp7lzel2x.jpg',
+                //     description: 'In this small project, you\'ll build out your social link-sharing profile. You can even personalize it and use it to share all your social profiles!',
+                //     source: {
+                //         title: 'Frontend Mentor',
+                //         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
+                //     }
+                // },
             ]
         }
     },
