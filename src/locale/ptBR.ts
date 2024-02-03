@@ -5,7 +5,7 @@ export default {
     basic: {
         shortName: 'Ian',
         fullName: 'Ian Welerson',
-        title: 'Engenheiro Frontend' 
+        title: 'Engenheiro Frontend'
     },
     social: {
         email: `hello{'@'}ianwelerson.com`,
@@ -47,22 +47,21 @@ export default {
         list: {
             title: 'Frontend Challenges',
             entry: {
-                text: 'Confira a minha página de desafios de frontend. Tudo aqui é foi feito com Vue.js. Você pode acessar os arquivos no meu ',
+                text: 'Explore minha página de desafios frontend. Aqui você encontra pequenos desafios e pode encontrar os arquivos no meu',
                 link: 'https://github.com/ianwelerson/ianwelerson.com/tree/main/src/views',
                 linkText: 'GitHub',
             },
             noContent: 'Nenhum desafio disponível no momento...',
             items: [
-                // {
-                //     id: 'my-id',
-                //     title: 'Social links profile',
-                //     thumb: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/sfsa14rwjz0wp7lzel2x.jpg',
-                //     description: 'In this small project, you\'ll build out your social link-sharing profile. You can even personalize it and use it to share all your social profiles!',
-                //     source: {
-                //         title: 'Frontend Mentor',
-                //         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
-                //     }
-                // },
+                {
+                    id: 'social-links-profile',
+                    title: 'Links de redes sociais',
+                    description: 'Nesse desafio, construí uma página de compartilhamento de links de redes sociais',
+                    source: {
+                        title: 'Frontend Mentor',
+                        link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
+                    }
+                }
             ]
         }
     },
