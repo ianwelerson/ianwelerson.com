@@ -47,22 +47,21 @@ export default {
         list: {
             title: 'Frontend Challenges',
             entry: {
-                text: 'Explore my Vue.js frontend challenges page. Everything here is crafted with Vue.js, and you can delve into the code on',
+                text: 'Explore my frontend challenges page. Here you can find small challenges, and you can find the source codes on my',
                 link: 'https://github.com/ianwelerson/ianwelerson.com/tree/main/src/views',
                 linkText: 'GitHub',
             },
             noContent: 'No challenges available for now...',
             items: [
-                // {
-                //     id: 'my-id',
-                //     title: 'Social links profile',
-                //     thumb: 'https://res.cloudinary.com/dz209s6jk/image/upload/f_auto,q_auto,w_700/Challenges/sfsa14rwjz0wp7lzel2x.jpg',
-                //     description: 'In this small project, you\'ll build out your social link-sharing profile. You can even personalize it and use it to share all your social profiles!',
-                //     source: {
-                //         title: 'Frontend Mentor',
-                //         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
-                //     }
-                // },
+                {
+                    id: 'social-links-profile',
+                    title: 'Social links profile',
+                    description: 'In this challenge, I build a basic social link-sharing profile.',
+                    source: {
+                        title: 'Frontend Mentor',
+                        link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
+                    }
+                },
             ]
         }
     },
