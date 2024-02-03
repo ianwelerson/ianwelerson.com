@@ -13,18 +13,17 @@ const router = createRouter({
     },
     {
       path: '/challenges',
-      component: () => import('@/views/Challenges/IndexView.vue'),
-
+      component: () => import('@/views/frontend-challenges/FrontendChallengesView.vue'),
       children: [
         {
           path: '',
           name: 'challengesList',
-          component: () => import('@/views/Challenges/ChallengesListView.vue')
+          component: () => import('@/views/frontend-challenges/ChallengesListView.vue')
         },
         {
           path: ':challengeId',
           name: 'challenge',
-          component: () => import('@/views/Challenges/ChallengeView.vue')
+          component: () => import('@/views/frontend-challenges/ChallengeView.vue')
         }
       ]
     },

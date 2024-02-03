@@ -58,7 +58,7 @@ const contactViewedStatus: ComputedRef<boolean> = computed(() => {
       <home-section id="about" next="contact" ref="aboutSection">
         <div :class="['about', { 'about--visible': aboutViewedStatus }]">
           <div class="about__picture fade-in">
-            <img src="@/assets/images/profile-pic.jpg" :alt="`${$t('basic.fullName')} - Picture`" class="about__profile">
+            <img src="@/assets/images/profile-pic-white.png" :alt="`${$t('basic.fullName')} - Picture`" class="about__profile">
           </div>
           <div class="about__description fade-in">
             <p class="about__description-line">{{ $t('home.about.description.start', { years: yearsOfExperience }) }}</p>

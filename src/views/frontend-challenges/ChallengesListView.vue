@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { useHead } from '@unhead/vue'
 import { useI18n } from 'vue-i18n'
 
-import BackIcon from '@/components/icons/BackIcon.vue'
+import ChallengeHeader from '@/components/frontend-challenges/PageHeader.vue'
 
 const { t, tm } = useI18n()
 
@@ -18,16 +18,7 @@ useHead({
 
 <template>
     <div class="challenge-list">
-        <header class="challenge-header">
-            <div class="challenge-header__content">
-                <router-link :to="{ name: 'home' }" class="challenge-header__back">
-                    <span class="challenge-header__back-icon">
-                        <back-icon />
-                    </span>
-                </router-link>
-                <h1 class="challenge-header__title">{{ $t('challenges.list.title') }}</h1>
-            </div>
-        </header>
+        <challenge-header :title="$t('challenges.list.title')" redirect-to="home" />
         <section class="challenge-content">
             <h2 class="challenge-content__entry">{{ $t('challenges.list.entry.text') }} <a :href="$t('challenges.list.entry.link')" target="_blank">{{ $t('challenges.list.entry.linkText') }}</a>.
             </h2>
@@ -37,7 +28,7 @@ useHead({
                     <router-link v-for="challenge in challengeList" :key="challenge.id" :to="{ name: 'challenge', params: { challengeId: challenge.id } }" class="challenge-card">
                         <div class="challenge-card__wrapper">
                             <div class="challenge-card__thumb">
-                                <img :src="challenge.thumb" class="thumb-img" >
+                                <img :src="`src/views/frontend-challenges/challenges/${challenge.id}/assets/images/thumb.png`" class="thumb-img" >
                             </div>
                             <div class="challenge-card__description">
                                 <h4 class="title">{{ challenge.title }}</h4>
@@ -60,52 +51,6 @@ useHead({
     flex-direction: column;
     align-items: center;
     background: $bg-solid;
-}
-
-.challenge-header {
-    width: 100%;
-    background: $blue-600;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    
-    @media (min-width: 1024px) {
-        padding: 20px 0;
-    } 
-
-    &__content {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-        width: 100%;
-
-        @media (min-width: 1280px) {
-            padding: 0;
-            width: 1280px;
-        }
-    }
-
-    &__back {
-        display: flex;
-        background: $white;
-        padding: 4px;
-        border-radius: 100%;
-        position: absolute;
-        left: 0;
-    }
-
-    &__back-icon {
-        width: 24px;
-        height: 24px;
-        color: $blue-600;
-    }
-
-    &__title {
-        font-size: $text-lg;
-        font-weight: $font-bold;
-    }
 }
 
 .challenge-content {
@@ -158,7 +103,6 @@ useHead({
     color: $primary;
     transition: all 0.2s ease-out;
     border-radius: 15px;
-    overflow: hidden;
     
     @media (min-width: 1024px) {
         margin: 20px;
@@ -167,6 +111,7 @@ useHead({
     
     &__wrapper {
         height: 100%;
+        border-radius: 15px;
         background-color: $white;
         display: flex;
         flex-direction: column;
@@ -174,7 +119,7 @@ useHead({
 
     &:hover {
         color: $blue-500;
-        box-shadow: 10px 10px 20px rgba(251, 251, 251, 0.082);
+        box-shadow: 0 5px 25px rgba(251, 251, 251, 0.082);
         transition: all 0.2s ease-in;
     }
 
