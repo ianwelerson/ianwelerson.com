@@ -28,7 +28,14 @@ const headerTitle = (tm('challenges.list.items') as any[])?.find(item => item.id
 
 <style lang="scss" scoped>
 .challenge-view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
     &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
         background-color: $white;
     }
 }

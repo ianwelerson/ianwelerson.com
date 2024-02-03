@@ -28,7 +28,7 @@ useHead({
                     <router-link v-for="challenge in challengeList" :key="challenge.id" :to="{ name: 'challenge', params: { challengeId: challenge.id } }" class="challenge-card">
                         <div class="challenge-card__wrapper">
                             <div class="challenge-card__thumb">
-                                <img :src="challenge.thumb" class="thumb-img" >
+                                <img :src="`src/views/frontend-challenges/challenges/${challenge.id}/assets/images/thumb.png`" class="thumb-img" >
                             </div>
                             <div class="challenge-card__description">
                                 <h4 class="title">{{ challenge.title }}</h4>
@@ -103,7 +103,6 @@ useHead({
     color: $primary;
     transition: all 0.2s ease-out;
     border-radius: 15px;
-    overflow: hidden;
     
     @media (min-width: 1024px) {
         margin: 20px;
@@ -112,6 +111,7 @@ useHead({
     
     &__wrapper {
         height: 100%;
+        border-radius: 15px;
         background-color: $white;
         display: flex;
         flex-direction: column;
@@ -119,7 +119,7 @@ useHead({
 
     &:hover {
         color: $blue-500;
-        box-shadow: 10px 10px 20px rgba(251, 251, 251, 0.082);
+        box-shadow: 0 5px 25px rgba(251, 251, 251, 0.082);
         transition: all 0.2s ease-in;
     }
 

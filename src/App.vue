@@ -60,6 +60,9 @@ useHead({
 <style scoped lang="scss">
 .app-wrapper {
   background: $bg-solid;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   &__language-selector {
     position: relative;
@@ -67,6 +70,9 @@ useHead({
   }
 
   &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     position: relative;
     z-index: 10;
   }
