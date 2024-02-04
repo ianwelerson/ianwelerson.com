@@ -143,7 +143,7 @@ function getEmbed(id: string) {
 
     &__thumb {
         width: 100%;
-        height: 250px;
+        height: 300px;
         position: relative;
         padding: 5px 5px 0 5px;
 
