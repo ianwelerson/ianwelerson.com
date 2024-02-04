@@ -29,6 +29,7 @@ useHead({
                         <div class="challenge-card__wrapper">
                             <div class="challenge-card__thumb">
                                 <img :src="`/images/challenges/${challenge.id}.png`" class="thumb-img" >
+                                <p v-if="!challenge.level" :class="['difficulty-level', `difficulty-level--${challenge.level}`]">{{ $t(`challenges.level.${challenge.level}`) }}</p>
                             </div>
                             <div class="challenge-card__description">
                                 <h4 class="title">{{ challenge.title }}</h4>
@@ -126,8 +127,9 @@ useHead({
     &__thumb {
         width: 100%;
         height: 250px;
-        overflow: hidden;
         margin-top: -5px;
+        overflow: hidden;
+        position: relative;
         border-radius: 15px 15px 0 0;
         
         .thumb-img {
@@ -135,6 +137,7 @@ useHead({
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: -1;
         }
     }
 
@@ -154,10 +157,10 @@ useHead({
             margin-top: 16px;
             font-weight: $font-light;
         }
-        
+
         .source {
-            align-self: flex-start;
             margin-top: 16px;
+            align-self: flex-start;
             border: 1px solid $primary;
             border-radius: 20px;
             padding: 6px 10px;
@@ -167,6 +170,24 @@ useHead({
             text-decoration: none;
             color: inherit;
         }
+    }
+}
+
+.difficulty-level {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    border: 1px solid $white;
+    border-radius: 20px;
+    padding: 6px 10px;
+    display: flex;
+    z-index: 20;
+    background-color: $white;
+    font-weight: $font-medium;
+    
+    &--0 {
+        color: $green-500;
+        border-color: $green-500;
     }
 }
 </style>
