@@ -48,7 +48,7 @@ export default {
             title: 'Frontend Challenges',
             entry: {
                 text: 'Explore my frontend challenges page. Here you can find small challenges, and you can find the source codes on my',
-                link: 'https://github.com/ianwelerson/ianwelerson.com/tree/main/src/views',
+                link: 'https://github.com/ianwelerson/ianwelerson.com/tree/main/src/views/frontend-challenges/challenges',
                 linkText: 'GitHub',
             },
             noContent: 'No challenges available for now...',
@@ -56,9 +56,10 @@ export default {
                 {
                     id: 'social-links-profile',
                     title: 'Social Links Profile',
-                    description: 'A basic social links profile page.',
                     level: 0,
+                    showAsEmbed: false,
                     source: {
+                        theme: 'white',
                         title: 'Frontend Mentor',
                         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
                     }
@@ -66,9 +67,10 @@ export default {
                 {
                     id: 'qr-code-component',
                     title: 'QR Code Component',
-                    description: 'A basic QR Code component.',
                     level: 0,
+                    showAsEmbed: false,
                     source: {
+                        theme: 'dark', 
                         title: 'Frontend Mentor',
                         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
                     }

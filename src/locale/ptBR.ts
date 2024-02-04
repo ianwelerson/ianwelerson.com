@@ -56,7 +56,7 @@ export default {
                 {
                     id: 'social-links-profile',
                     title: 'Links de Redes Sociais',
-                    description: 'Nesse desafio, construí uma página de compartilhamento de links de redes sociais.',
+                    showAsEmbed: false,
                     level: 0,
                     source: {
                         title: 'Frontend Mentor',
@@ -66,7 +66,7 @@ export default {
                 {
                     id: 'qr-code-component',
                     title: 'QR Code Component',
-                    description: 'Component básico com QR Code.',
+                    showAsEmbed: false,
                     level: 0,
                     source: {
                         title: 'Frontend Mentor',
