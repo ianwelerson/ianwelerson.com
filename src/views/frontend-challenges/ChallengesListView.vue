@@ -28,7 +28,7 @@ useHead({
                     <router-link v-for="challenge in challengeList" :key="challenge.id" :to="{ name: 'challenge', params: { challengeId: challenge.id } }" class="challenge-card">
                         <div class="challenge-card__wrapper">
                             <div class="challenge-card__thumb">
-                                <img :src="`src/views/frontend-challenges/challenges/${challenge.id}/assets/images/thumb.png`" class="thumb-img" >
+                                <img :src="`/images/challenges/${challenge.id}.png`" class="thumb-img" >
                             </div>
                             <div class="challenge-card__description">
                                 <h4 class="title">{{ challenge.title }}</h4>
