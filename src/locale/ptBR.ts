@@ -55,14 +55,28 @@ export default {
             items: [
                 {
                     id: 'social-links-profile',
-                    title: 'Links de redes sociais',
-                    description: 'Nesse desafio, construí uma página de compartilhamento de links de redes sociais',
+                    title: 'Links de Redes Sociais',
+                    description: 'Nesse desafio, construí uma página de compartilhamento de links de redes sociais.',
+                    level: 0,
                     source: {
                         title: 'Frontend Mentor',
                         link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
                     }
-                }
+                },
+                {
+                    id: 'qr-code-component',
+                    title: 'QR Code Component',
+                    description: 'Component básico com QR Code.',
+                    level: 0,
+                    source: {
+                        title: 'Frontend Mentor',
+                        link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
+                    }
+                },
             ]
+        },
+        level: {
+            0: 'Muito Fácil'
         }
     },
     resume: 'My Resume'
