@@ -7,8 +7,9 @@
 }
 
 body {
-    margin: 0;
-    font-family: $font-family;
-    color: $font-color;
-    min-height: 100vh;
+  margin: 0;
+  font-family: $font-family-quicksand;
+  color: $font-color;
+  min-height: 100vh;
+  overflow-x: hidden;
 }

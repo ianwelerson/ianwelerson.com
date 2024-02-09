@@ -6,7 +6,26 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
+      meta: {
+        allowTranslate: true
+      },
       component: () => import('@/views/HomeView.vue')
+    },
+    {
+      path: '/challenges',
+      component: () => import('@/views/frontend-challenges/FrontendChallengesView.vue'),
+      children: [
+        {
+          path: '',
+          name: 'challengesList',
+          component: () => import('@/views/frontend-challenges/ChallengesListView.vue')
+        },
+        {
+          path: ':challengeId',
+          name: 'challenge',
+          component: () => import('@/views/frontend-challenges/ChallengeView.vue')
+        }
+      ]
     },
     // {
     //   path: '/resume',
