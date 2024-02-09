@@ -11,6 +11,7 @@ export default {
         email: `hello{'@'}ianwelerson.com`,
         linkedin: 'https://www.linkedin.com/in/ianwelerson/',
         github: 'https://github.com/ianwelerson',
+        codepen: 'https://codepen.io/ianwelerson',
     },
     meta: {
         title: '{name} - {page}',

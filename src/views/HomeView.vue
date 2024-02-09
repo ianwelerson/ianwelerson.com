@@ -9,6 +9,7 @@ import HomeSection from '@/components/home/HomeSection.vue'
 // Icons
 import LinkedinIcon from '@/components/icons/LinkedinIcon.vue'
 import GithubIcon from '@/components/icons/GithubIcon.vue'
+import CodepenIcon from '@/components/icons/CodepenIcon.vue'
 
 const { t } = useI18n();
 
@@ -78,8 +79,9 @@ const contactViewedStatus: ComputedRef<boolean> = computed(() => {
         <div :class="['contact', { 'contact--visible': contactViewedStatus }]">
           <a :href="`mailto:${$t('social.email')}`" class="contact__email fade-in">{{ $t('social.email') }}</a>
           <div class="contact__social">
-            <a :href="$t('social.linkedin')" class="btn btn--social btn--social-white scale-in-hor-center"><linkedin-icon /></a>
-            <a :href="$t('social.github')" class="btn btn--social btn--social-white scale-in-hor-center"><github-icon /></a>
+            <a :href="$t('social.linkedin')" target="_blank" class="btn btn--social btn--social-white scale-in-hor-center"><linkedin-icon /></a>
+            <a :href="$t('social.github')" target="_blank" class="btn btn--social btn--social-white scale-in-hor-center"><github-icon /></a>
+            <a :href="$t('social.codepen')" target="_blank" class="btn btn--social btn--social-white scale-in-hor-center btn--social-round"><codepen-icon /></a>
           </div>
         </div>
       </home-section>
