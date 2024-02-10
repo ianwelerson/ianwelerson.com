@@ -40,6 +40,8 @@ const router = createRouter({
         behavior: 'smooth',
       }
     }
+
+    return { top: 0, behavior: 'smooth', }
   }
 })
 
