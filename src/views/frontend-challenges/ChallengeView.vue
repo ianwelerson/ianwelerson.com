@@ -6,7 +6,7 @@ import { useI18n } from 'vue-i18n'
 import ChallengeHeader from '@/components/frontend-challenges/PageHeader.vue'
 
 const route = useRoute()
-const { t, tm } = useI18n()
+const { tm } = useI18n()
 
 const challengeId = route.params.challengeId
 
@@ -21,9 +21,13 @@ const challengeData = (tm('challenges.list.items') as any[])?.find(item => item.
     <div class="challenge-view">
         <challenge-header :title="challengeData.title ?? $t('challenges.list.title')" redirect-to="challengesList" />
         <div class="challenge-view__content">
-            <a :href="challengeData.source.link"  target="_blank" :class="['source', `source--${challengeData.source.theme}`]">
-                <span class="source__link">Source: {{ challengeData.source.title }}</span>
-            </a>
+            <div class="links">
+                <a v-for="link in challengeData.links" :key="link.type" :href="link.url" target="_blank"
+                    :class="['links__item', `links__item--${link.theme}`]">
+                    <span class="links__item-text">{{ link.type === 'DESIGN' ? 'Design from' : 'View code on' }} {{ link.title
+                    }}</span>
+                </a>
+            </div>
             <component :is="challenge"></component>
         </div>
     </div>
@@ -34,7 +38,7 @@ const challengeData = (tm('challenges.list.items') as any[])?.find(item => item.
     flex: 1;
     display: flex;
     flex-direction: column;
-    
+
     &__content {
         flex: 1;
         display: flex;
@@ -44,43 +48,50 @@ const challengeData = (tm('challenges.list.items') as any[])?.find(item => item.
     }
 }
 
-.source {
-    align-self: flex-start;
-    border: 1px solid $primary;
-    border-radius: 20px;
-    padding: 5px 10px;
-    display: flex;
+.links {
     z-index: 10;
     position: absolute;
     right: 10px;
     top: 10px;
-    transition: all 0.2s ease-in;
-    text-decoration: none;
-    
-    &__link {
-        font-size: 16px;
-        color: $primary;
+    display: flex;
+
+    &__item {
+        padding: 5px 10px;
+        align-self: flex-start;
+        border: 1px solid $primary;
+        border-radius: 20px;
         transition: all 0.2s ease-in;
-    }
+        text-decoration: none;
 
-    &--white {
-        border-color: $white;
-
-        .source__link {
-            color: $white;
+        &:not(:last-child) {
+            margin-right: 10px;
         }
-    }
 
-    &:hover:not(&--white) {
-        background-color: $primary;
-
-        .source__link {
-            color: $white;
+        &-text {
+            font-size: 16px;
+            color: $primary;
+            transition: all 0.2s ease-in;
         }
-    }
 
-    &:hover:is(&--white) {
-        opacity: 0.7;
+        &--white {
+            border-color: $white;
+
+            .links__item-text {
+                color: $white;
+            }
+        }
+
+        &:hover:not(&--white) {
+            background-color: $primary;
+
+            .links__item-text {
+                color: $white;
+            }
+        }
+
+        &:hover:is(&--white) {
+            opacity: 0.7;
+        }
     }
 }
 </style>
