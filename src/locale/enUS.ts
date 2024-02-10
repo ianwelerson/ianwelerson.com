@@ -59,22 +59,48 @@ export default {
                     title: 'Social Links Profile',
                     level: 0,
                     showAsEmbed: false,
-                    source: {
-                        theme: 'white',
-                        title: 'Frontend Mentor',
-                        link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
-                    }
+                    links: [
+                        {
+                            type: 'DESIGN',
+                            title: 'Frontend Mentor',
+                            theme: 'white',
+                            url: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
+                        }
+                    ],
                 },
                 {
                     id: 'qr-code-component',
                     title: 'QR Code Component',
                     level: 0,
                     showAsEmbed: false,
-                    source: {
-                        theme: 'dark', 
-                        title: 'Frontend Mentor',
-                        link: 'https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ'
-                    }
+                    links: [
+                        {
+                            type: 'DESIGN',
+                            title: 'Frontend Mentor',
+                            theme: 'dark',
+                            url: 'https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H'
+                        }
+                    ],
+                },
+                {
+                    id: 'rating-component',
+                    title: 'Rating Component',
+                    level: 0,
+                    showAsEmbed: false,
+                    links: [
+                        {
+                            type: 'DESIGN',
+                            title: 'Frontend Mentor',
+                            theme: 'white',
+                            url: 'https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI'
+                        },
+                        {
+                            type: 'CODEPEN',
+                            title: 'Codepen',
+                            theme: 'white',
+                            url: 'https://codepen.io/ianwelerson/pen/eYXPmMX'
+                        }
+                    ],
                 },
             ]
         },
