@@ -44,9 +44,9 @@ function getEmbed(id: string) {
                                 <template v-else>
                                     <img :src="`/images/challenges/${challenge.id}.png`" class="thumb-img">
                                 </template>
-                                <p v-if="!challenge.level"
+                                <!-- <p v-if="!challenge.level"
                                     :class="['difficulty-level', `difficulty-level--${challenge.level}`]">{{
-                                        $t(`challenges.level.${challenge.level}`) }}</p>
+                                        $t(`challenges.level.${challenge.level}`) }}</p> -->
                             </div>
                             <div class="challenge-card__description">
                                 <h4 class="title">{{ challenge.title }}</h4>
