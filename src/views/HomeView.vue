@@ -66,9 +66,9 @@ const contactViewedStatus: ComputedRef<boolean> = computed(() => {
             <p class="about__description-line">{{ $t('home.about.description.middle') }}</p>
             <p class="about__description-line">{{ $t('home.about.description.end') }}</p>
           </div>
-          <div class="about__cta fade-in">
+          <!-- <div class="about__cta fade-in">
             <router-link :to="{ name: 'challengesList' }" class="btn btn--color-white">{{ $t('home.about.cta') }}</router-link>
-          </div>
+          </div> -->
           <div class="about__stack">
             <div v-for="stack in $tm('home.about.stack')" :key="stack" class="stack-item scale-in-ver-center">{{ stack }}
             </div>

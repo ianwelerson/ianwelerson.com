@@ -28,15 +28,16 @@ export default {
         },
         about: {
             description: {
-                start: 'I\'m a frontend engineer and Information Systems bachelor with {years}+ years of experience, dedicated to creating exceptional user experiences.',
-                middle: 'I started as a full-stack developer, handling platforms like WordPress and Laravel. Later, I focused on frontend technologies, mastering HTML, CSS, JavaScript, Vue.js, TypeScript, and Tailwind.',
-                end: 'I\'ve collaborated with Brazilian and US-based companies, cultivating adaptability in diverse work environments.'
+                start: `I'm a frontend engineer and Information Systems bachelor with 6+ years of experience. I'm dedicated to creating exceptional user experiences.`,
+                middle: 'I started as a full-stack developer, handling platforms like WordPress and Laravel. Later, I focused on frontend technologies, mastering HTML, CSS, JavaScript, Vue.js, Svelte, TypeScript, and Tailwind.',
+                end: `I've collaborated with Brazilian and international companies (US and AUS), cultivating adaptability in diverse work environments.`
             },
             cta: 'Check out my frontend challenges',
             stack: [
                 'JavaScript',
                 'TypeScript',
                 'Vue.js',
+                'Svelte',
                 'SASS/LESS',
                 'Tailwind',
                 'Jest',

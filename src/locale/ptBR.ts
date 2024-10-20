@@ -29,14 +29,15 @@ export default {
         about: {
             description: {
                 start: 'Sou engenheiro frontend e bacharel em Sistemas de Informação com {years}+ anos de experiência, com foco em criar interfaces expecionais.',
-                middle: 'Iniciei minha carreira como desenvolvedor full stack, lidando com plataformas como WordPress e Laravel. Posteriormente, foquei em tecnologias frontend, dominando HTML, CSS, JavaScript, Vue.js, TypeScript e Tailwind.',
-                end: 'Colaborei com empresas brasileiras e norte-americanas, cultivando adaptabilidade em diversos ambientes de trabalho.'
+                middle: 'Iniciei minha carreira como desenvolvedor full stack, lidando com plataformas como WordPress e Laravel. Posteriormente, foquei em tecnologias frontend, dominando HTML, CSS, JavaScript, Vue.js, Svelte, TypeScript e Tailwind.',
+                end: 'Colaborei com empresas brasileiras e internacionais, cultivando adaptabilidade em diversos ambientes de trabalho.'
             },
             cta: 'Veja meus desafios frontend',
             stack: [
                 'JavaScript',
                 'TypeScript',
                 'Vue.js',
+                'Svelte',
                 'SASS/LESS',
                 'Tailwind',
                 'Jest',
