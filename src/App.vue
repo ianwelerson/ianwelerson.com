@@ -2,7 +2,7 @@
 import { watch, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useHead } from '@unhead/vue'
-import { useI18n } from "vue-i18n";
+import { useI18n } from 'vue-i18n'
 
 import LanguageSwitch from '@/components/global/LanguageSwitch.vue'
 
@@ -27,7 +27,8 @@ useHead({
     },
     {
       name: 'keywords',
-      content: 'HTML,CSS,JavaScript,TypeScript,Vue,Vue.js,PHP,Laravel,Tailwind,Bootstrap,Wordpress,Plugin,SEO,Dev,Developer,Development,Frontend,Front-end,Engineer'
+      content:
+        'HTML,CSS,JavaScript,TypeScript,Vue,Vue.js,Svelte,PHP,Laravel,Tailwind,Bootstrap,Wordpress,Plugin,SEO,Dev,Developer,Development,Frontend,Front-end,Engineer'
     },
     {
       name: 'author',
@@ -39,7 +40,6 @@ useHead({
     }
   ]
 })
-
 </script>
 
 <template>
@@ -55,6 +55,7 @@ useHead({
       </router-view>
     </div>
   </div>
+  
 </template>
 
 <style scoped lang="scss">
